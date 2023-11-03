@@ -8,13 +8,27 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/spinner";
 
+import Typewriter from 'typewriter-effect';
+
 export const Heading = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
 
   return (
     <div className="max-w-3xl space-y-4">
       <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold">
-        Your Ideas, Documents, & Plans. Unified. Welcome to <span className="underline">Jotion</span>
+        <div className="flex flex-row justify-between space-x-2 items-center">
+        <span className="mr-5">Your{' '}</span>
+        <Typewriter
+          options={{
+            strings: ['Ideas', 'Plans', 'Documents'],
+            autoStart: true,
+            loop: true,
+          }}
+        />
+        Unified.
+      </div>
+      Welcome to{' '}
+      <span className="underline">Jotion</span>
       </h1>
       <h3 className="text-base sm:text-xl md:text-2xl font-medium">
         Jotion is the connected workspace where <br />
